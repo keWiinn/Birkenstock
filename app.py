@@ -1,4 +1,4 @@
-#API KEY AIzaSyB8tF8DtONfgq_Rb4MAHF3XxzHj_se-l6E
+
 
 from flask import Flask, request, render_template, jsonify
 import google.generativeai as genai
@@ -9,10 +9,10 @@ app = Flask(__name__, static_folder='static', template_folder='templates')
 CORS(app)
 
 # ✅ Set API Key
-GEN_AI_API_KEY = os.environ.get("AIzaSyB8tF8DtONfgq_Rb4MAHF3XxzHj_se-l6E")
+GEN_AI_API_KEY = os.environ.get("api-key")
 if not GEN_AI_API_KEY:
     print("Environment variable GEN_AI_API_KEY not set. Using fallback key.")
-    genai.configure(api_key="AIzaSyB8tF8DtONfgq_Rb4MAHF3XxzHj_se-l6E")
+    genai.configure(api_key="api-key")
 else:
     print("Using API key from environment variable")
     genai.configure(api_key=GEN_AI_API_KEY)
